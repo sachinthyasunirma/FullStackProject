@@ -1,11 +1,11 @@
 import React from 'react'
+import Navbar from '../Components/Navbar/Navbar'
 
 function HomeLayout({children}) {
   return (
     <>
-    <h1>NavBar</h1>
+    <Navbar />
     {children}
-    <h1>Footer</h1>
     </>
   )
 }
