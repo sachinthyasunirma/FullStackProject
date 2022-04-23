@@ -6,7 +6,6 @@ function HomeLayout({children}) {
     <>
     <Navbar />
     {children}
-    <h1>Footer</h1>
     </>
   )
 }
