@@ -73,7 +73,7 @@ const LargeNav = () => {
   const handleonClick = (index) => {
     setIsActiveNavTab(index);
   }
-  // <button key={index} onClick={() => handleonClick(index)} className={`hover:bg-gray-800 hover:rounded-md p-2 ${isActiveNavTab === index ? "focus:border-b-2" : "focus:border-none"}`}><span className='hover:text-gray-300'>{navtab}</span></button>
+  
   return (
     <div className='hidden lg:inline container w-full px-20 mx-auto bg-slate-900 text-white py-2'>
       <div className='gap-4 w-full items-center justify-around lg:flex'>
