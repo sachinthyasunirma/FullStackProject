@@ -55,13 +55,25 @@ const LargeNav = () => {
   const [user, setUser] = useState(
     // {fullName:"sachitnhya"}
   );
-  const [navTab, setNavTab] = useState(["Projects","Experience","Stack"]);
+  const [navTab, setNavTab] = useState([
+    {
+      id:"projects",
+      name:"Projects"
+    },
+    {
+      id:"experience",
+      name:"Experience"
+    },
+    {
+      id:'stack',
+      name:"Stack"
+    }]);
   const {type} = useParams();
 
   const handleonClick = (index) => {
     setIsActiveNavTab(index);
   }
-  // <button key={index} onClick={() => handleonClick(index)} className={`hover:bg-gray-800 hover:rounded-md p-2 ${isActiveNavTab === index ? "focus:border-b-2" : "focus:border-none"}`}><span className='hover:text-gray-300'>{navtab}</span></button>
+  
   return (
     <div className='hidden lg:inline container w-full px-20 mx-auto bg-slate-900 text-white py-2'>
       <div className='gap-4 w-full items-center justify-around lg:flex'>
@@ -72,13 +84,13 @@ const LargeNav = () => {
           <div id='navTab' className='flex items-center gap-2 pr-2'>
             {navTab.map((navtab, index) => {
               return (
-                <Link to={`/${navtab}`} className='w-full mx-6'>
+                <Link to={`/${navtab.id}`} className='w-full mx-6'>
                   <span className={classnames(
                     "text-white",
                     {
-                      "border-b-2 border-red-800 bg-gray-800 p-3 rounded-md": type === navtab
+                      "border-b-2 border-red-800 bg-gray-800 p-3 rounded-md": type === navtab.id
                     }
-                  )}>{navtab}</span>
+                  )}>{navtab.name}</span>
                 </Link>
               )
             })}
